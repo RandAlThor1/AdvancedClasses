@@ -19,18 +19,36 @@ public class Main {
     
     public static GUI displayGui;
     public static Ball ball;
-    public static PhysicsBall physicsBall;
+    //public static PhysicsBall physicsBall;
     
     public static void main(String[] args) {
         System.out.println("advancedclasses.Main.main();");
         
+        boolean isRunning = true;
+        
         displayGui = new GUI();
         ball = new Ball("Ball");
-        physicsBall = new PhysicsBall("Physics Ball");
+        //physicsBall = new PhysicsBall("Physics Ball");
         
         displayGui.add(ball);
-        displayGui.add(physicsBall);
+        //displayGui.add(physicsBall);
         
-        
+        while (isRunning) {
+            ball.move();
+            interval(10);
+        }
+    }
+    
+//    public void stopRunning() {
+//        System.out.println("advancedclasses.Main.stopRunning();");
+//        
+//        isRunning = false;
+//    }
+
+    private static void interval(int time) {
+        try {
+            Thread.sleep(time);
+        } catch (Exception e) {
+        }
     }
 }
