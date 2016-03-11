@@ -16,12 +16,15 @@ import javax.swing.JFrame;
  */
 class GUI extends JFrame implements KeyListener{
     
+    private final int ESCAPE = 27; // Esc
+    
     public GUI() {
         System.out.println("advancedclasses.GUI.GUI();");
         
         this.setLayout(null);
         this.setSize(1280, 720);
         this.setLocation(200, 120);
+        this.addKeyListener(this);
         this.getContentPane().setBackground(Color.BLACK);
         this.setUndecorated(true);
         this.setVisible(true);
@@ -32,21 +35,25 @@ class GUI extends JFrame implements KeyListener{
 
     @Override
     public void keyTyped(KeyEvent e) {
-        //System.out.println("advancedclasses.GUI.keyTyped(" + e.getKeyCode() + ");");
+        System.out.println("advancedclasses.GUI.keyTyped(" + e.getKeyCode() + ");");
         
         
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-        System.out.println("advancedclasses.GUI.keyPressed(" + e.getKeyCode() + ");");
-        
+        System.out.println("advancedclasses.GUI.keyPressed(" + e.getKeyCode()+ ");");
+        switch (e.getKeyCode()) {
+            case ESCAPE:
+                System.exit(0);
+                break;
+        }
         
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        //System.out.println("advancedclasses.GUI.keyReleased(" + e.getKeyCode() + ");");
+        System.out.println("advancedclasses.GUI.keyReleased(" + e.getKeyCode() + ");");
         
         
     }

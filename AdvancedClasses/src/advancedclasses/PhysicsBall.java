@@ -16,17 +16,17 @@ class PhysicsBall extends Ball{
     public PhysicsBall() {
         System.out.println("advancedclasses.PhysicsBall.PhysicsBall(void);");
         
-        Construct("void");
+        construct("void");
     }
     
     public PhysicsBall(String name) {
         System.out.println("advancedclasses.PhysicsBall.PhysicsBall(physicsBall);");
         
-        Construct(name);
+        construct(name);
     }
 
-    private void Construct(String name) {
-        System.out.println("advancedclasses.PhysicsBall.Construct();");
+    private void construct(String name) {
+        System.out.println("advancedclasses.PhysicsBall.construct();");
         this.setName(name);
         
         
