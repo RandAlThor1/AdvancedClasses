@@ -19,7 +19,7 @@ public class Main {
     
     public static GUI displayGui;
     public static Ball ball;
-    //public static PhysicsBall physicsBall;
+    public static PhysicsBall physicsBall;
     
     public static void main(String[] args) {
         System.out.println("advancedclasses.Main.main();");
@@ -28,13 +28,14 @@ public class Main {
         
         displayGui = new GUI();
         ball = new Ball("Ball");
-        //physicsBall = new PhysicsBall("Physics Ball");
+        physicsBall = new PhysicsBall("Physics Ball");
         
         displayGui.add(ball);
-        //displayGui.add(physicsBall);
+        displayGui.add(physicsBall);
         
         while (isRunning) {
             ball.move();
+            physicsBall.move();
             interval(10);
         }
     }

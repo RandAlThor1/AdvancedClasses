@@ -35,7 +35,7 @@ class GUI extends JFrame implements KeyListener{
 
     @Override
     public void keyTyped(KeyEvent e) {
-        System.out.println("advancedclasses.GUI.keyTyped(" + e.getKeyCode() + ");");
+        //System.out.println("advancedclasses.GUI.keyTyped(" + e.getKeyCode() + ");");
         
         
     }
@@ -53,7 +53,7 @@ class GUI extends JFrame implements KeyListener{
 
     @Override
     public void keyReleased(KeyEvent e) {
-        System.out.println("advancedclasses.GUI.keyReleased(" + e.getKeyCode() + ");");
+        //System.out.println("advancedclasses.GUI.keyReleased(" + e.getKeyCode() + ");");
         
         
     }
