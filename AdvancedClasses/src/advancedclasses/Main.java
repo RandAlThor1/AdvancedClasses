@@ -10,10 +10,10 @@ package advancedclasses;
 * Author: Julian Kresz & Davin Holmberg
 * Assignment: Advanced Classes Group Project
 * Teacher: Mr. Wachs
- Course: Computer Science 40S
- Created on: March 10, 2016, 10:48 AM
-
- Main.Java:
+* Course: Computer Science 40S
+* Created on: March 10, 2016, 10:48 AM
+*
+* Main.Java: Main class for project
 */
 public class Main {
     
