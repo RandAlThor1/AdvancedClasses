@@ -6,6 +6,7 @@
 package advancedclasses;
 
 import java.awt.Color;
+import java.util.Random;
 import javax.swing.JLabel;
 
 /**
@@ -14,8 +15,12 @@ import javax.swing.JLabel;
  */
 class Ball extends JLabel{
     
-    int xLoc   = 250;
-    int yLoc   = 250;
+    Random r = new Random();
+    
+    int xLoc = 250;
+    int yLoc = 250;
+    //int xLoc   = r.nextInt(Main.displayGui.getWidth());   ONCE FINALIZED WE'LL HAVE INITIAL POSITION RANDOM
+    //int yLoc   = r.nextInt(Main.displayGui.getHeight());
     int xSpeed = 3;
     int ySpeed = 3;
     
@@ -55,12 +60,8 @@ class Ball extends JLabel{
         
     }
     
-    public void update() {
-        move();
-    }
-    
     public void move() {
-        System.out.println("advancedclasses.Ball.move();");
+        //System.out.println("advancedclasses.Ball.move();");
         xLoc = xLoc + xSpeed;
         yLoc = yLoc + ySpeed;
         if (this.xLoc < 1)      { bounce(FRAMELEFT); }
@@ -72,8 +73,8 @@ class Ball extends JLabel{
         
     }
     
-    private void bounce(int whichBorder) {
-        System.out.println("advancedclasses.Ball.bounce();");
+    public void bounce(int whichBorder) {
+        //System.out.println("advancedclasses.Ball.bounce();");
         
         switch (whichBorder) {
             case FRAMELEFT:
