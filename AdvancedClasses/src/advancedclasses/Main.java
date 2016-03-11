@@ -35,7 +35,7 @@ public class Main {
         
         while (isRunning) {
             ball.move();
-            interval(100);
+            interval(10);
         }
     }
     

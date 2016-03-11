@@ -16,8 +16,8 @@ class Ball extends JLabel{
     
     int xLoc   = 250;
     int yLoc   = 250;
-    int xSpeed = 10;
-    int ySpeed = 10;
+    int xSpeed = 3;
+    int ySpeed = 3;
     
     //    int NOFRAME     = 0;
     final int FRAMELEFT   = 1;
