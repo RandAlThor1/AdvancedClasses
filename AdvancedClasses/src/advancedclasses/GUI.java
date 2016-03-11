@@ -23,9 +23,9 @@ class GUI extends JFrame implements KeyListener{
         this.setSize(1280, 720);
         this.setLocation(200, 120);
         this.getContentPane().setBackground(Color.BLACK);
-        this.setUndecorated(true);
+        this.setUndecorated(true);//why?
         this.setVisible(true);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);//undecorated make this less useful
         
         
     }
