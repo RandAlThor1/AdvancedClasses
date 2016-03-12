@@ -5,6 +5,7 @@
  */
 package advancedclasses;
 
+import static advancedclasses.Main.initSettings;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -22,8 +23,8 @@ class GUI extends JFrame implements KeyListener{
         System.out.println("advancedclasses.GUI.GUI();");
         
         this.setLayout(null);
-        this.setSize(1280, 720);
-        this.setLocation(200, 120);
+        this.setSize(initSettings.dWidth, initSettings.dHeight);
+        this.setLocation((1920 - initSettings.dWidth) / 2, (1080 - initSettings.dHeight) / 2);
         this.addKeyListener(this);
         this.getContentPane().setBackground(Color.BLACK);
         this.setUndecorated(true);

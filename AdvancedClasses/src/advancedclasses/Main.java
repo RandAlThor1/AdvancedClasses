@@ -20,31 +20,30 @@ public class Main {
     public static GUI displayGui;
     public static Ball ball;
     public static PhysicsBall physicsBall;
+    public static InitializedSettings initSettings;
     
     public static void main(String[] args) {
         System.out.println("advancedclasses.Main.main();");
         
         boolean isRunning = true;
         
+        initSettings = new InitializedSettings();
+        
         displayGui = new GUI();
         ball = new Ball("Ball");
-        physicsBall = new PhysicsBall("Physics Ball");
-        
         displayGui.add(ball);
-        displayGui.add(physicsBall);
+        for (int b = 0; b < initSettings.dPhysBalls; b++) {
+            physicsBall = new PhysicsBall("Physics Ball"); // TODO: HOW MANY PHYSICS BALLS WILL APPEAR
+            displayGui.add(physicsBall);
+        }
+        //physicsBall = new PhysicsBall("Physics Ball");
         
         while (isRunning) {
             ball.move();
             physicsBall.move();
-            interval(10);
+            interval(initSettings.dTimeScale);
         }
     }
-    
-//    public void stopRunning() {
-//        System.out.println("advancedclasses.Main.stopRunning();");
-//        
-//        isRunning = false;
-//    }
 
     private static void interval(int time) {
         try {

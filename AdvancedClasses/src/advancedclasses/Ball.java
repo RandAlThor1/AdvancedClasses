@@ -5,6 +5,7 @@
  */
 package advancedclasses;
 
+import static advancedclasses.Main.initSettings;
 import java.awt.Color;
 import java.util.Random;
 import javax.swing.JLabel;
@@ -17,12 +18,12 @@ class Ball extends JLabel{
     
     Random r = new Random();
     
-    int xLoc = 250;
-    int yLoc = 250;
-    //int xLoc   = r.nextInt(Main.displayGui.getWidth());   ONCE FINALIZED WE'LL HAVE INITIAL POSITION RANDOM
-    //int yLoc   = r.nextInt(Main.displayGui.getHeight());
-    int xSpeed = 3;
-    int ySpeed = 3;
+//    int xLoc = 250;
+//    int yLoc = 250;
+    int xLoc   = r.nextInt(Main.displayGui.getWidth() - this.getWidth());
+    int yLoc   = r.nextInt(Main.displayGui.getHeight() - this.getHeight());
+    int xSpeed = 5;
+    int ySpeed = 5;
     
     //    int NOFRAME     = 0;
     final int FRAMELEFT   = 1;
@@ -51,7 +52,7 @@ class Ball extends JLabel{
         this.setName(name);
         
         this.setLayout(null);
-        this.setSize(50, 50);
+        this.setSize(initSettings.dBall, initSettings.dBall);
         this.setLocation(xLoc, yLoc);
         this.setOpaque(true);
         this.setBackground(Color.WHITE);
@@ -68,7 +69,7 @@ class Ball extends JLabel{
         else if (this.yLoc < 1) { bounce(FRAMETOP); }
         else if ((this.xLoc + this.getWidth()) > (Main.displayGui.getWidth() - 1))   { bounce(FRAMERIGHT); }
         else if ((this.yLoc + this.getHeight()) > (Main.displayGui.getHeight() - 1)) { bounce(FRAMEBOTTOM); }
-        else    {  }
+        
         this.setLocation(xLoc, yLoc);
         
     }
@@ -78,16 +79,25 @@ class Ball extends JLabel{
         
         switch (whichBorder) {
             case FRAMELEFT:
-                xSpeed = 0 - xSpeed;
+                if (xSpeed < 0) {
+                    xSpeed = 0 - xSpeed;
+                }
+                
                 break;
             case FRAMETOP:
-                ySpeed = 0 - ySpeed;
+                if (ySpeed < 0) {
+                    ySpeed = 0 - ySpeed;
+                }
                 break;
             case FRAMERIGHT:
-                xSpeed = 0 - xSpeed;
+                if (xSpeed > 0) {
+                    xSpeed = 0 - xSpeed;
+                }
                 break;
             case FRAMEBOTTOM:
-                ySpeed = 0 - ySpeed;
+                if (ySpeed > 0) {
+                    ySpeed = 0 - ySpeed;
+                }
                 break;
         }
         
