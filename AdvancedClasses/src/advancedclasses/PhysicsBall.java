@@ -15,22 +15,7 @@ import java.util.Random;
  * @author j.kresz
  */
 class PhysicsBall extends Ball{
-    
-    Random r = new Random();
-    
-//    int xLoc = 100;
-//    int yLoc = 100;
-    int xLoc   = r.nextInt(Main.displayGui.getWidth() - this.getWidth());
-    int yLoc   = r.nextInt(Main.displayGui.getHeight() - this.getHeight());
-    int xSpeed = 0;
-    int ySpeed = 0;
-    
-    //    int NOFRAME     = 0;
-    final int FRAMELEFT   = 1;
-    final int FRAMETOP    = 2;
-    final int FRAMERIGHT  = 3;
-    final int FRAMEBOTTOM = 4;
-    
+
     public PhysicsBall() {
         System.out.println("advancedclasses.PhysicsBall.PhysicsBall(void);");
         
@@ -62,8 +47,8 @@ class PhysicsBall extends Ball{
     @Override
     public void move() {
         //System.out.println("advancedclasses.Ball.move();");
-        xLoc = xLoc + xSpeed;
-        yLoc = yLoc + ySpeed;
+        xLoc = xLoc + (int)xSpeed;
+        yLoc = yLoc + (int)ySpeed;
 //        for (int i = 0; i < xSpeed; i++) {
 //            xLoc = xLoc + i;
 //        }
@@ -93,7 +78,7 @@ class PhysicsBall extends Ball{
     }
     
     public void bounce(int whichBorder) {
-        System.out.println("advancedclasses.Ball.bounce();");
+        //System.out.println("advancedclasses.Ball.bounce();");
         
         switch (whichBorder) {
             case FRAMELEFT:

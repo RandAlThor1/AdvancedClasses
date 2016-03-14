@@ -20,6 +20,7 @@ public class Main {
     public static GUI displayGui;
     public static Ball ball;
     public static PhysicsBall physicsBall;
+    public static GravityBall gravityBall;
     public static InitializedSettings initSettings;
     
     public static void main(String[] args) {
@@ -32,15 +33,20 @@ public class Main {
         displayGui = new GUI();
         ball = new Ball("Ball");
         displayGui.add(ball);
+        
         for (int b = 0; b < initSettings.dPhysBalls; b++) {
             physicsBall = new PhysicsBall("Physics Ball"); // TODO: HOW MANY PHYSICS BALLS WILL APPEAR
             displayGui.add(physicsBall);
         }
         //physicsBall = new PhysicsBall("Physics Ball");
         
+        gravityBall = new GravityBall();
+        displayGui.add(gravityBall);
+        
         while (isRunning) {
             ball.move();
             physicsBall.move();
+            gravityBall.move();
             interval(initSettings.dTimeScale);
         }
     }
