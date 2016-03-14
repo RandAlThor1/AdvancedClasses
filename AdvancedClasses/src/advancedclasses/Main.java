@@ -21,6 +21,7 @@ public class Main {
     public static Ball ball;
     public static PhysicsBall physicsBall;
     public static GravityBall gravityBall;
+    public static CollisionBall collisionBall;
     public static InitializedSettings initSettings;
     
     public static void main(String[] args) {
@@ -43,10 +44,14 @@ public class Main {
         gravityBall = new GravityBall();
         displayGui.add(gravityBall);
         
+        collisionBall = new CollisionBall();
+        displayGui.add(collisionBall);
+        
         while (isRunning) {
             ball.move();
             physicsBall.move();
             gravityBall.move();
+            collisionBall.move();
             interval(initSettings.dTimeScale);
         }
     }
