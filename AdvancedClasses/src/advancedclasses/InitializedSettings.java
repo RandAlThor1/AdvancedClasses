@@ -95,7 +95,8 @@ public class InitializedSettings {
         try {
             dAnswer = Integer.parseInt(JOptionPane.showInputDialog(qString
                 + "\nDefault: " + dAnswer));
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
+            System.out.println("Question "+qString+": NumberFormatException.");
         }
         
         

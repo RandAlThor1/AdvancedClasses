@@ -22,8 +22,8 @@ class Ball extends JLabel{
 //    int yLoc = 250;
     int xLoc   = r.nextInt(Main.displayGui.getWidth() - this.getWidth());
     int yLoc   = r.nextInt(Main.displayGui.getHeight() - this.getHeight());
-    int xSpeed = 5;
-    int ySpeed = 5;
+    double xSpeed = 5;
+    double ySpeed = 5;
     
     //    int NOFRAME     = 0;
     final int FRAMELEFT   = 1;
@@ -63,8 +63,8 @@ class Ball extends JLabel{
     
     public void move() {
         //System.out.println("advancedclasses.Ball.move();");
-        xLoc = xLoc + xSpeed;
-        yLoc = yLoc + ySpeed;
+        xLoc = xLoc + (int)xSpeed;
+        yLoc = yLoc + (int)ySpeed;
         if (this.xLoc < 1)      { bounce(FRAMELEFT); }
         else if (this.yLoc < 1) { bounce(FRAMETOP); }
         else if ((this.xLoc + this.getWidth()) > (Main.displayGui.getWidth() - 1))   { bounce(FRAMERIGHT); }
